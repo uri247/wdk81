@@ -1,0 +1,1130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:ImageSprite,0:Header.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=7C6B75EB2370E5BF527667B884499204" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/c9b486a1-0011-4088-b424-6fe1108f4cf6Combined.css,0:ImageSprite,0:Footer.NonMtps,1:LinkList;/Areas/Centers/Themes/Msdn/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=59AF12CEA39A0C1AEAA6487FF1817969" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Windows Driver Kit (WDK) 8.1 Samples</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Windows Driver Kit (WDK) 8.1 Samples</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            File System, WFP, printer, WDM, KMDF, UMDF, ndis, StorPort, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Audio, input, Printing, Bluetooth, File Systems, Networking, serial, Storage, usb, general, KMDF, UMDF, hid, wpd, Devices and sensors, Static Driver Verifier
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">10/17/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Windows-8-Driver-Samples-5e1aa62e">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div class="clsServerSDKContent">
+<h1><a id="gallery_samples.sp02_gallery"></a>Windows Driver Kit (WDK) 8.1 Samples</h1>
+</div>
+<p>This samples pack contains all the official Windows Driver Kit code examples prepared for use with Microsoft Visual Studio&nbsp;2013 and the Windows Driver Kit (WDK)&nbsp;8.1. The contents of this pack are described
+<a href="http://go.microsoft.com/fwlink/?LinkID=309481">here</a>.</p>
+<p>The sample pack provides a convenient way to download all the samples at once. These samples are available individually on the Windows Hardware Code Gallery or through Visual Studio&nbsp;2013. The Windows Samples Gallery contains a variety of code samples
+ that exercise the various new programming models, platforms, features, and components available in Windows&nbsp;8.1 and/or Windows Server&nbsp;2012&nbsp;R2. These downloadable samples are provided as compressed ZIP files that contain a Visual Studio solution
+ (SLN) file for the sample, along with the source files, assets, resources, and metadata necessary to successfully compile and run the sample.</p>
+<p>For more information about the programming models, platforms, languages, and APIs demonstrated in this sample, please refer to the guidance, tutorials, and reference topics provided in the Windows&nbsp;8.1 documentation available in the Windows Developer
+ Center. The samples are provided as-is in order to indicate or demonstrate the functionality of the programming models and feature APIs for Windows&nbsp;8.1 and/or Windows Server&nbsp;2012&nbsp;R2.</p>
+<p>This pack may be very large and take some time to download.</p>
+
+</div>
+
+
+            <hr />
+            <div id="sampleIndex">
+                <h2>Sample index</h2>
+                <div id="SampleIndexList">
+                        <!--ps15759-->
+                        <div id="item">
+                                <div><a href="USBView sample application/description.html">USBView sample application</a></div>
+                            <div>Usbview.exe is a Windows GUI application that allows you to browse all USB controllers and connected USB devices on your system. The left pane in the main application window displays a connection-oriented tree view, and the right pane displays the US...</div>
+                        </div>
+                        <!--pe15759-->
+                        <!--ps13081-->
+                        <div id="item">
+                                <div><a href="Device Console (DevCon) Tool/description.html">Device Console (DevCon) Tool</a></div>
+                            <div>DevCon is a command-line tool that displays detailed information about devices, and lets you search for and manipulate devices from the command line. DevCon enables, disables, installs, configures, and removes devices on the local computer and displa...</div>
+                        </div>
+                        <!--pe13081-->
+                        <!--ps15758-->
+                        <div id="item">
+                                <div><a href="Usbsamp Generic USB Driver/description.html">Usbsamp Generic USB Driver</a></div>
+                            <div>The USBSAMP sample demonstrates how to perform full speed, high speed, and SuperSpeed transfers to and from bulk and isochronous endpoints of a generic USB device. USBSAMP is based on the Kernel Mode Driver Framework (KMDF). Superspeed bulk and isoch...</div>
+                        </div>
+                        <!--pe15758-->
+                        <!--ps15709-->
+                        <div id="item">
+                                <div><a href="Microsoft Virtual Audio Device Driver Sample/description.html">Microsoft Virtual Audio Device Driver Sample</a></div>
+                            <div>The Microsoft virtual audio device (MSVAD) driver sample is a collection of sample drivers that demonstrate the basics of writing a WDM audio driver. All the sample drivers use the same &quot;virtual audio device&quot; instead of an actual hardware-based adapt...</div>
+                        </div>
+                        <!--pe15709-->
+                        <!--ps15764-->
+                        <div id="item">
+                                <div><a href="Windows Filtering Platform Sample/description.html">Windows Filtering Platform Sample</a></div>
+                            <div>The WFPSampler is a sample firewall. It has a command-line interface which allows adding filters at various WFP layers with the myriad of conditions. Additionally it exposes callouts for injection, basic action, proxying, and stream inspection.</div>
+                        </div>
+                        <!--pe15764-->
+                        <!--ps15762-->
+                        <div id="item">
+                                <div><a href="Virtual serial driver sample/description.html">Virtual serial driver sample</a></div>
+                            <div>This sample demonstrates serial drivers. It includes a simple virtual serial driver (ComPort) and a controller-less modem driver (FakeModem). This driver supports sending and receiving AT commands using the ReadFile and WriteFile calls or via a TAPI ...</div>
+                        </div>
+                        <!--pe15762-->
+                        <!--ps17075-->
+                        <div id="item">
+                                <div><a href="RAMDisk Storage Driver/description.html">RAMDisk Storage Driver</a></div>
+                            <div>The RAMDisk sample demonstrates how to write a software only function driver using the Kernel Mode Driver Framework (KMDF). This driver creates a RAM disk drive.</div>
+                        </div>
+                        <!--pe17075-->
+                        <!--ps13111-->
+                        <div id="item">
+                                <div><a href="Windows Image Acquisition (WIA) Driver Samples/description.html">Windows Image Acquisition (WIA) Driver Samples</a></div>
+                            <div>The Windows Image Acquisition driver sample set contains samples and test tools for Windows Image Acquisition (WIA), a driver architecture and user interface for acquiring images from still image devices such as scanners and digital still cameras.</div>
+                        </div>
+                        <!--pe13111-->
+                        <!--ps15749-->
+                        <div id="item">
+                                <div><a href="Toaster Sample Driver/description.html">Toaster Sample Driver</a></div>
+                            <div>The Toaster collection is an iterative series of samples that demonstrate fundamental aspects of Windows driver development for both Kernel-Mode Driver Framework (KMDF) and User-Mode Driver Framework (UMDF) version 1.</div>
+                        </div>
+                        <!--pe15749-->
+                        <!--ps13097-->
+                        <div id="item">
+                                <div><a href="Serial Port Driver/description.html">Serial Port Driver</a></div>
+                            <div>The Serial (16550-based RS-232) sample driver is a WDF version of the inbox Serial.sys driver in %WINDIR%\system32\drivers.</div>
+                        </div>
+                        <!--pe13097-->
+                        <!--ps13085-->
+                        <div id="item">
+                                <div><a href="NDIS 6.0 Filter Driver/description.html">NDIS 6.0 Filter Driver</a></div>
+                            <div>The Ndislwf sample is currently a do-nothing pass-through NDIS 6 filter driver that demonstrates the basic principles underlying an NDIS 6.0 Filter driver. The sample is a replacement of NDIS 5 Sample Intermediate Driver (Passthru driver).</div>
+                        </div>
+                        <!--pe13085-->
+                        <!--ps13110-->
+                        <div id="item">
+                                <div><a href="HID Minidriver Sample (UMDF Version 1)/description.html">HID Minidriver Sample (UMDF Version 1)</a></div>
+                            <div>The HID minidriver sample (WudfVhidmini.dll) demonstrates how to write a HID minidriver using User-Mode Driver Framework (UMDF) version 1.</div>
+                        </div>
+                        <!--pe13110-->
+                        <!--ps15998-->
+                        <div id="item">
+                                <div><a href="Keyboard Input WDF Filter Driver (Kbfiltr)/description.html">Keyboard Input WDF Filter Driver (Kbfiltr)</a></div>
+                            <div>The Kbdfltr sample is an example of a keyboard input filter driver.</div>
+                        </div>
+                        <!--pe15998-->
+                        <!--ps17071-->
+                        <div id="item">
+                                <div><a href="Minispy File System Minifilter Driver/description.html">Minispy File System Minifilter Driver</a></div>
+                            <div>The Minispy sample is a tool to monitor and log any I/O and transaction activity that occurs in the system. Minispy is implemented as a minifilter.</div>
+                        </div>
+                        <!--pe17071-->
+                        <!--ps15678-->
+                        <div id="item">
+                                <div><a href="Windows Filtering Platform Packet Modification Sample/description.html">Windows Filtering Platform Packet Modification Sample</a></div>
+                            <div>The sample driver demonstrates the packet modification capabilities of the Windows Filtering Platform (WFP).</div>
+                        </div>
+                        <!--pe15678-->
+                        <!--ps15733-->
+                        <div id="item">
+                                <div><a href="Scanner File System Minifilter Driver/description.html">Scanner File System Minifilter Driver</a></div>
+                            <div>The Scanner minifilter is an example for developers who intend to write filters that examine data in files. Typically, antivirus products fall into this category.</div>
+                        </div>
+                        <!--pe15733-->
+                        <!--ps15692-->
+                        <div id="item">
+                                <div><a href="HClient sample application/description.html">HClient sample application</a></div>
+                            <div>The HClient sample demonstrates how to write a user-mode client application that communicates with HID devices. (These are devices that conform to the HID device class specification.)</div>
+                        </div>
+                        <!--pe15692-->
+                        <!--ps15723-->
+                        <div id="item">
+                                <div><a href="PLX9x5x PCI Driver/description.html">PLX9x5x PCI Driver</a></div>
+                            <div>This sample demonstrates how to write driver for a generic PCI device using Windows Driver Framework. The target hardware for this driver is PLX9656/9653RDK-LITE board. The product kit and the hardware specification are available at http://www.plxtec...</div>
+                        </div>
+                        <!--pe15723-->
+                        <!--ps13090-->
+                        <div id="item">
+                                <div><a href="Kernel mode display-only miniport  driver (KMDOD) sample/description.html">Kernel mode display-only miniport  driver (KMDOD) sample</a></div>
+                            <div>The kernel mode display-only miniport driver (KMDOD) sample implements most of the device driver interfaces (DDIs) that a display-only miniport driver should provide to the Windows Display Driver Model (WDDM). The code is useful to understand how to ...</div>
+                        </div>
+                        <!--pe13090-->
+                        <!--ps15721-->
+                        <div id="item">
+                                <div><a href="PCIDRV - WDF Driver for PCI Device/description.html">PCIDRV - WDF Driver for PCI Device</a></div>
+                            <div>This sample demonstrates how to write a KMDF driver for a PCI device. The sample works with the Intel 82557/82558 based PCI Ethernet Adapter (10/100) and Intel compatibles.</div>
+                        </div>
+                        <!--pe15721-->
+                        <!--ps15670-->
+                        <div id="item">
+                                <div><a href="Windows Biometric Driver Samples (UMDF Version 1)/description.html">Windows Biometric Driver Samples (UMDF Version 1)</a></div>
+                            <div>The Windows Biometric Driver Samples contain the Windows Biometric Driver Interface sample and the Windows Biometric Service Adapter samples.</div>
+                        </div>
+                        <!--pe15670-->
+                        <!--ps15698-->
+                        <div id="item">
+                                <div><a href="IOCTL/description.html">IOCTL</a></div>
+                            <div>This sample demonstrates the usage of four different types of IOCTLs (METHOD_IN_DIRECT, METHOD_OUT_DIRECT, METHOD_NEITHER, and METHOD_BUFFERED).</div>
+                        </div>
+                        <!--pe15698-->
+                        <!--ps17066-->
+                        <div id="item">
+                                <div><a href="HID Client Sample Driver (UMDF Version 1)/description.html">HID Client Sample Driver (UMDF Version 1)</a></div>
+                            <div>The HID Client Sample driver (Fx2HID.dll) illustrates how to expose vendor-specific functionality on a HID collection. This sample is designed to work with the OSR USB FX2 Learning Kit board and the Custom driver access Windows Store app.</div>
+                        </div>
+                        <!--pe17066-->
+                        <!--ps15727-->
+                        <div id="item">
+                                <div><a href="Printer Extension Sample/description.html">Printer Extension Sample</a></div>
+                            <div>This sample demonstrates how to use .NET to build a customized, desktop UI for a v4 print driver. This .NET app uses PrintTicket, PrintCapabilities and Bidi in order to communicate with the print system and is suitable for inclusion in a v4 print dri...</div>
+                        </div>
+                        <!--pe15727-->
+                        <!--ps17079-->
+                        <div id="item">
+                                <div><a href="SCSI Pass-Through Interface Tool/description.html">SCSI Pass-Through Interface Tool</a></div>
+                            <div>The SCSI Pass Through Interface sample demonstrates how to communicate with a SCSI device from Microsoft Win32 applications by using the DeviceIoControl API.</div>
+                        </div>
+                        <!--pe17079-->
+                        <!--ps13112-->
+                        <div id="item">
+                                <div><a href="WPDHelloWorld sample driver for portable devices/description.html">WPDHelloWorld sample driver for portable devices</a></div>
+                            <div>The WpdHelloWorld sample driver supports four objects: a device object, a storage object, a folder object, and a file object. Each object supports corresponding properties. These properties are defined in the file WpdObjectProperties.h.</div>
+                        </div>
+                        <!--pe13112-->
+                        <!--ps15715-->
+                        <div id="item">
+                                <div><a href="NDIS Virtual Miniport Driver/description.html">NDIS Virtual Miniport Driver</a></div>
+                            <div>The NDIS Virtual Miniport Driver sample illustrates the functionality of an NDIS miniport driver without requiring a physical network adapter.</div>
+                        </div>
+                        <!--pe15715-->
+                        <!--ps15766-->
+                        <div id="item">
+                                <div><a href="WMI ACPI Sample/description.html">WMI ACPI Sample</a></div>
+                            <div>The WMIACPI sample contains ACPI BIOS and Microsoft Windows Management Instrumentation (WMI) sample code that enables instrumentation of the ACPI BIOS from within ACPI Source Language (ASL) code. ASL code can expose data blocks, methods, and events t...</div>
+                        </div>
+                        <!--pe15766-->
+                        <!--ps15663-->
+                        <div id="item">
+                                <div><a href="AMCC5933 - PCI Device Driver Using WDF/description.html">AMCC5933 - PCI Device Driver Using WDF</a></div>
+                            <div>This sample demonstrates how to write driver for a generic PCI device by using the Windows Driver Framework.</div>
+                        </div>
+                        <!--pe15663-->
+                        <!--ps15705-->
+                        <div id="item">
+                                <div><a href="Mouse Input WDF Filter Driver (Moufiltr)/description.html">Mouse Input WDF Filter Driver (Moufiltr)</a></div>
+                            <div>The Moufiltr sample is an example of a mouse input filter driver.</div>
+                        </div>
+                        <!--pe15705-->
+                        <!--ps13077-->
+                        <div id="item">
+                                <div><a href="AVStream simulated hardware sample driver (Avshws)/description.html">AVStream simulated hardware sample driver (Avshws)</a></div>
+                            <div>The AVStream simulated hardware sample driver (Avshws) provides a pin-centric AVStream capture driver for a simulated piece of hardware. This streaming media driver performs video captures at 320 x 240 pixels in either RGB24 or YUV422 format using di...</div>
+                        </div>
+                        <!--pe13077-->
+                        <!--ps15752-->
+                        <div id="item">
+                                <div><a href="Generic Text-Only Driver/description.html">Generic Text-Only Driver</a></div>
+                            <div>The Generic Text-Only Driver (TTY) sample demonstrates how to implement a generic, text-only print driver that is based on the Microsoft Universal Printer Driver (Unidrv).</div>
+                        </div>
+                        <!--pe15752-->
+                        <!--ps17085-->
+                        <div id="item">
+                                <div><a href="Sample UMDF Function Driver for OSR USB-FX2 (UMDF Version 1)/description.html">Sample UMDF Function Driver for OSR USB-FX2 (UMDF Version 1)</a></div>
+                            <div>The umdf_fx2 sample is a User-Mode Driver Framework (UMDF) driver for the OSR USB-FX2 device. It includes a test app and sample device metadata, and supports impersonation and idle power down.</div>
+                        </div>
+                        <!--pe17085-->
+                        <!--ps23530-->
+                        <div id="item">
+                                <div><a href="Microsoft slate system virtual audio device driver sample/description.html">Microsoft slate system virtual audio device driver sample</a></div>
+                            <div> The Microsoft Slate Virtual Audio Device Driver (SYSVAD\SlateAudioSample) demonstrates how to develop a WDM audio driver that exposes support for multiple audio devices. Some of these audio devices are embedded (speakers, mic arrays) in the system w...</div>
+                        </div>
+                        <!--pe23530-->
+                        <!--ps17069-->
+                        <div id="item">
+                                <div><a href="Sample KMDF Function Driver for OSR USB-FX2/description.html">Sample KMDF Function Driver for OSR USB-FX2</a></div>
+                            <div>The kmdf_fx2 sample is a Kernel-Mode Driver Framework (KMDF) driver for the OSR USB-FX2 device. It includes a test app and sample device metadata.</div>
+                        </div>
+                        <!--pe17069-->
+                        <!--ps13108-->
+                        <div id="item">
+                                <div><a href="UMDF Driver Skeleton Sample (UMDF Version 1)/description.html">UMDF Driver Skeleton Sample (UMDF Version 1)</a></div>
+                            <div>This sample demonstrates how to use version 1 of the User-Mode Driver Framework to write a minimal driver.</div>
+                        </div>
+                        <!--pe13108-->
+                        <!--ps15734-->
+                        <div id="item">
+                                <div><a href="Sensors Geolocation Sample Driver (UMDF Version 1)/description.html">Sensors Geolocation Sample Driver (UMDF Version 1)</a></div>
+                            <div>The geolocation sample driver demonstrates a minimal UMDF driver that emulates a Global Positioning System (GPS) device. Note that this sample is applicable to other global navigation satellite system (GNSS) solutions.</div>
+                        </div>
+                        <!--pe15734-->
+                        <!--ps15773-->
+                        <div id="item">
+                                <div><a href="XPSDrv Driver and Filter Sample/description.html">XPSDrv Driver and Filter Sample</a></div>
+                            <div>This sample is intended to provide a starting point for developing XPSDrv printer drivers and to illustrate the facility and potential of an XPSDrv print driver. This goal is accomplished by implementing a number of real-world features within a set o...</div>
+                        </div>
+                        <!--pe15773-->
+                        <!--ps15703-->
+                        <div id="item">
+                                <div><a href="Print Monitors Samples/description.html">Print Monitors Samples</a></div>
+                            <div>The Print Monitors samples contain monitors which handle communications between the print spooler and other print control elements.</div>
+                        </div>
+                        <!--pe15703-->
+                        <!--ps17076-->
+                        <div id="item">
+                                <div><a href="Driver MFT Sample/description.html">Driver MFT Sample</a></div>
+                            <div>Provides a driver MFT for use with a camera&#39;s Windows Store device app.</div>
+                        </div>
+                        <!--pe17076-->
+                        <!--ps15691-->
+                        <div id="item">
+                                <div><a href="GPIO Sample Drivers/description.html">GPIO Sample Drivers</a></div>
+                            <div>The GPIO samples contain annotated code to illustrate how to write a GPIO controller driver that works in conjunction with the GPIO framework extension (GpioClx) to handle GPIO I/O control requests, and a peripheral driver that runs in kernel mode an...</div>
+                        </div>
+                        <!--pe15691-->
+                        <!--ps15707-->
+                        <div id="item">
+                                <div><a href="Windows Filtering Platform MSN Messenger Monitor Sample/description.html">Windows Filtering Platform MSN Messenger Monitor Sample</a></div>
+                            <div>This sample application and driver demonstrate the stream inspection capabilities of the Windows Filtering Platform (WFP).</div>
+                        </div>
+                        <!--pe15707-->
+                        <!--ps15772-->
+                        <div id="item">
+                                <div><a href="WPD WUDF sample driver/description.html">WPD WUDF sample driver</a></div>
+                            <div>The comprehensive WPD sample driver (WpdWudfSampleDriver) demonstrates virtually all aspects of the Microsoft Windows Portable Devides (WPD) device driver interface (DDI). This driver is built as a normal User-Mode Driver Framework (UMDF) driver that...</div>
+                        </div>
+                        <!--pe15772-->
+                        <!--ps15717-->
+                        <div id="item">
+                                <div><a href="ObCallback Callback Registration Driver/description.html">ObCallback Callback Registration Driver</a></div>
+                            <div>The ObCallback sample driver demonstrates the use of registered callbacks for process protection. The driver registers control callbacks which are called at process creation.</div>
+                        </div>
+                        <!--pe15717-->
+                        <!--ps15696-->
+                        <div id="item">
+                                <div><a href="Windows Filtering Platform Traffic Inspection Sample/description.html">Windows Filtering Platform Traffic Inspection Sample</a></div>
+                            <div>This sample driver demonstrates the traffic inspection capabilities of the Windows Filtering Platform (WFP).</div>
+                        </div>
+                        <!--pe15696-->
+                        <!--ps13088-->
+                        <div id="item">
+                                <div><a href="HIDUSBFX2 sample driver/description.html">HIDUSBFX2 sample driver</a></div>
+                            <div>The HIDUSBFX2 sample driver (hidusbfx2.sys) demonstrates how to map a non-HID USB device to a HID device.</div>
+                        </div>
+                        <!--pe13088-->
+                        <!--ps15665-->
+                        <div id="item">
+                                <div><a href="Native Wi-Fi Miniport Sample Driver/description.html">Native Wi-Fi Miniport Sample Driver</a></div>
+                            <div>The sample code illustrates the typical behavior of a Native Wi-Fi miniport driver. This driver is an NDIS 6.20 miniport driver that conforms to the Microsoft Native Wi-Fi miniport driver specification.</div>
+                        </div>
+                        <!--pe15665-->
+                        <!--ps15682-->
+                        <div id="item">
+                                <div><a href="KMDF Echo Sample/description.html">KMDF Echo Sample</a></div>
+                            <div>The ECHO (KMDF) sample demonstrates how to use a sequential queue to serialize read and write requests presented to the driver.</div>
+                        </div>
+                        <!--pe15682-->
+                        <!--ps15720-->
+                        <div id="item">
+                                <div><a href="PassThrough File System Minifilter Driver/description.html">PassThrough File System Minifilter Driver</a></div>
+                            <div>The PassThrough minifilter demonstrates how to specify callback functions for different types of I/O requests.</div>
+                        </div>
+                        <!--pe15720-->
+                        <!--ps17086-->
+                        <div id="item">
+                                <div><a href="WDF Sample Driver Learning Lab for OSR USB-FX2/description.html">WDF Sample Driver Learning Lab for OSR USB-FX2</a></div>
+                            <div>The wdf_osrfx2_lab sample contains a console test application and a series of iterative drivers for both Kernel-Mode Driver Framework (KMDF) and User-Mode Driver Framework (UMDF) version 1.</div>
+                        </div>
+                        <!--pe17086-->
+                        <!--ps15742-->
+                        <div id="item">
+                                <div><a href="SpbAccelerometer Sample Driver (UMDF Version 1)/description.html">SpbAccelerometer Sample Driver (UMDF Version 1)</a></div>
+                            <div>The SpbAccelerometer sample shows how to write a UMDF driver to control a peripheral device that is connected to a simple peripheral bus (SPB). In this sample, the peripheral device is a sensor (an accelerometer) and the SPB is an I2C bus.</div>
+                        </div>
+                        <!--pe15742-->
+                        <!--ps15700-->
+                        <div id="item">
+                                <div><a href="NONPNP/description.html">NONPNP</a></div>
+                            <div>This sample is primarily meant to demonstrate how to write a NON-PNP driver using the Kernel Mode Driver Framework.</div>
+                        </div>
+                        <!--pe15700-->
+                        <!--ps15718-->
+                        <div id="item">
+                                <div><a href="OEM Printer Customization Plug-in Samples/description.html">OEM Printer Customization Plug-in Samples</a></div>
+                            <div>The OEMDLL samples are an illustration of OEM customization plug-ins. The BITMAP, OEMPS, OEMUI, OEMUNI, OEMPREAN, CUSTHLP, SyncSet, ThemeUI, PSUIRep, and Watermark samples do not affect the printer output. They are only examples of how to build OEM C...</div>
+                        </div>
+                        <!--pe15718-->
+                        <!--ps17061-->
+                        <div id="item">
+                                <div><a href="AC97 Driver Sample/description.html">AC97 Driver Sample</a></div>
+                            <div>This directory contains a sample AC97 adapter driver and several related code samples. The AC97 driver sample shows how to develop a WDM audio adapter driver that incorporates a wavePci miniport driver for the AC97 controller&#39;s wave audio device.</div>
+                        </div>
+                        <!--pe17061-->
+                        <!--ps15671-->
+                        <div id="item">
+                                <div><a href="Bluetooth Echo L2CAP Profile Driver/description.html">Bluetooth Echo L2CAP Profile Driver</a></div>
+                            <div>This sample demonstrates developing Bluetooth L2CAP profile drivers using Bluetooth L2CAP DDIs.</div>
+                        </div>
+                        <!--pe15671-->
+                        <!--ps15668-->
+                        <div id="item">
+                                <div><a href="AVStream filter-centric simulated capture sample driver (Avssamp)/description.html">AVStream filter-centric simulated capture sample driver (Avssamp)</a></div>
+                            <div>The AVStream filter-centric simulated capture sample driver (Avssamp) provides a filter-centric AVStream capture driver with functional audio. This streaming media driver performs video captures at 320 x 240 pixel resolution in RGB24 or YUV422 format...</div>
+                        </div>
+                        <!--pe15668-->
+                        <!--ps15687-->
+                        <div id="item">
+                                <div><a href="fastfat File System Driver/description.html">fastfat File System Driver</a></div>
+                            <div>The fastfat sample is file system driver that you can use as a model to write new file systems.</div>
+                        </div>
+                        <!--pe15687-->
+                        <!--ps15713-->
+                        <div id="item">
+                                <div><a href="Connection-less NDIS 6.0 Sample Protocol Driver/description.html">Connection-less NDIS 6.0 Sample Protocol Driver</a></div>
+                            <div>This sample demonstrates a connection-less NDIS 6.0 protocol driver.</div>
+                        </div>
+                        <!--pe15713-->
+                        <!--ps15714-->
+                        <div id="item">
+                                <div><a href="Near-Field Proximity Sample Driver (UMDF Version 1)/description.html">Near-Field Proximity Sample Driver (UMDF Version 1)</a></div>
+                            <div>This sample demonstrates how to use User-Mode Driver Framework (UMDF) version 1 to write a near-field proximity driver.</div>
+                        </div>
+                        <!--pe15714-->
+                        <!--ps15746-->
+                        <div id="item">
+                                <div><a href="SwapBuffer File System Minifilter Driver/description.html">SwapBuffer File System Minifilter Driver</a></div>
+                            <div>The SwapBuffers minifilter demonstrates how to switch buffers between reads and writes of data. This technique is particularly useful for encryption filters because they have to encrypt data before writing it to disk and decrypt it after reading it f...</div>
+                        </div>
+                        <!--pe15746-->
+                        <!--ps15689-->
+                        <div id="item">
+                                <div><a href="KMDF filter driver for a HID device/description.html">KMDF filter driver for a HID device</a></div>
+                            <div> Firefly is a KMDF-based filter driver for a HID device. Along with illustrating how to write a filter driver, this sample shows how to use remote I/O target interfaces to open a HID collection in kernel-mode and send IOCTL requests to set and get fe...</div>
+                        </div>
+                        <!--pe15689-->
+                        <!--ps15739-->
+                        <div id="item">
+                                <div><a href="SimRep File System Minifilter Driver/description.html">SimRep File System Minifilter Driver</a></div>
+                            <div>SimRep is a sample filter that demonstrates how a file system filter can simulate file-system like reparse-point behavior to redirect a file open to an alternate path.</div>
+                        </div>
+                        <!--pe15739-->
+                        <!--ps13098-->
+                        <div id="item">
+                                <div><a href="Bluetooth Serial HCI Bus Driver/description.html">Bluetooth Serial HCI Bus Driver</a></div>
+                            <div>The purpose of this sample is to demonstrate how to implement a basic bus driver to support the new Bluetooth Extensibility transport DDIs over the UART transport. Such a serial bus driver can support a multi-radio device over the UART transport and ...</div>
+                        </div>
+                        <!--pe13098-->
+                        <!--ps15743-->
+                        <div id="item">
+                                <div><a href="SpbTestTool/description.html">SpbTestTool</a></div>
+                            <div>The SpbTestTool sample serves two purposes. First, it demonstrates how to open a handle to the SPB controller, use the SPB interface from a KMDF driver, and employ GPIO passive-level interrupts. Second, it implements a set of commands for communicati...</div>
+                        </div>
+                        <!--pe15743-->
+                        <!--ps23533-->
+                        <div id="item">
+                                <div><a href="USB Host-Based Print Driver Sample/description.html">USB Host-Based Print Driver Sample</a></div>
+                            <div>This driver sample demonstrates how to support host-based devices that use the v4 print driver model, and are connected via USB.</div>
+                        </div>
+                        <!--pe23533-->
+                        <!--ps15681-->
+                        <div id="item">
+                                <div><a href="DirectMusic UART Driver Sample/description.html">DirectMusic UART Driver Sample</a></div>
+                            <div>The DirectMusic UART (DMusUART) sample driver is a DMus miniport driver. It provides applications that use DirectMusic&#174; or the Microsoft&#174; Windows&#174; multimedia midiInXxx and midiOutXxx functions with an interface to the MPU-401 chip.</div>
+                        </div>
+                        <!--pe15681-->
+                        <!--ps15673-->
+                        <div id="item">
+                                <div><a href="CDFS File System Driver/description.html">CDFS File System Driver</a></div>
+                            <div>The CD-ROM file system driver (cdfs) sample is a sample file system driver that you can use to write new file systems.</div>
+                        </div>
+                        <!--pe15673-->
+                        <!--ps15741-->
+                        <div id="item">
+                                <div><a href="PCMCIA Smart Card Driver/description.html">PCMCIA Smart Card Driver</a></div>
+                            <div>The PCMCIA Smart Card Driver is used for the SCM PCMCIA smart card reader. This driver is written using Kernel-Mode Driver Framework.</div>
+                        </div>
+                        <!--pe15741-->
+                        <!--ps15736-->
+                        <div id="item">
+                                <div><a href="Serenum sample/description.html">Serenum sample</a></div>
+                            <div>Serenum enumerates Plug-n-Play RS-232 devices that are compliant with the current revision of Plug and Play External COM Device. It loads as an upper filter driver to many different RS-232 device drivers that are compliant with its requirements and p...</div>
+                        </div>
+                        <!--pe15736-->
+                        <!--ps13084-->
+                        <div id="item">
+                                <div><a href="Hyper-V Extensible Switch extension filter driver/description.html">Hyper-V Extensible Switch extension filter driver</a></div>
+                            <div>This sample contains a base library used to implement a Hyper-V Extensible Switch extension filter driver. This sample also contains two different extension filter drivers that were developed by using the library.</div>
+                        </div>
+                        <!--pe13084-->
+                        <!--ps15729-->
+                        <div id="item">
+                                <div><a href="Windows Radio Management Sample/description.html">Windows Radio Management Sample</a></div>
+                            <div>The Radio Manager sample demonstrates how to structure a Radio Manager for use with the Windows&#160;8.1 Radio Management APIs.</div>
+                        </div>
+                        <!--pe15729-->
+                        <!--ps15686-->
+                        <div id="item">
+                                <div><a href="Fakemodem Driver/description.html">Fakemodem Driver</a></div>
+                            <div>The Fakemodem sample demonstrates a simple controller-less modem driver. This driver supports sending and receiving AT commands using the ReadFile/WriteFile calls or via a TAPI interface using an application such as HyperTerminal.</div>
+                        </div>
+                        <!--pe15686-->
+                        <!--ps15724-->
+                        <div id="item">
+                                <div><a href="PortIO Sample Driver/description.html">PortIO Sample Driver</a></div>
+                            <div>This sample driver for a generic port I/O device shows how to use an INF file to reserve I/O ports for a non-Plug and Play device, and how to read and write to this device from a user-mode application.</div>
+                        </div>
+                        <!--pe15724-->
+                        <!--ps17073-->
+                        <div id="item">
+                                <div><a href="NameChanger File System Minifilter Driver/description.html">NameChanger File System Minifilter Driver</a></div>
+                            <div>The NameChanger minifilter grafts a directory from one part of a volume&#39;s namespace to another part using a mapping. The minifilter maintains this illusion by acting as a name provider, injecting entries into directory enumerations and forwarding dir...</div>
+                        </div>
+                        <!--pe17073-->
+                        <!--ps15730-->
+                        <div id="item">
+                                <div><a href="RegFltr Sample Driver/description.html">RegFltr Sample Driver</a></div>
+                            <div>The RegFltr sample shows how to write a registry filter driver.</div>
+                        </div>
+                        <!--pe15730-->
+                        <!--ps15675-->
+                        <div id="item">
+                                <div><a href="Change File System Minifilter Driver/description.html">Change File System Minifilter Driver</a></div>
+                            <div>The Change minifilter is a transaction-aware filter that monitors file changes in real time.</div>
+                        </div>
+                        <!--pe15675-->
+                        <!--ps15667-->
+                        <div id="item">
+                                <div><a href="AvScan File System Minifilter Driver/description.html">AvScan File System Minifilter Driver</a></div>
+                            <div>The AvScan minifilter is a transaction-aware file scanner. This is an example for developers who intend to write filters that examine data in files. Typically, anti-virus products fall into this category.</div>
+                        </div>
+                        <!--pe15667-->
+                        <!--ps13109-->
+                        <div id="item">
+                                <div><a href="WDF Hybrid 1394 Virtual Device Sample Driver/description.html">WDF Hybrid 1394 Virtual Device Sample Driver</a></div>
+                            <div>This sample consists of a KMDF function driver and a UMDF upper filter driver that together represent a 1394 virtual device. The sample demonstrates application to device interaction, as well as use of both UMDF and KMDF in the same device stack.</div>
+                        </div>
+                        <!--pe13109-->
+                        <!--ps17062-->
+                        <div id="item">
+                                <div><a href="AddFilter Storage Filter Tool/description.html">AddFilter Storage Filter Tool</a></div>
+                            <div>Addfilter is a command-line application that adds and removes filter drivers for a given drive or volume. This application demonstrates how to insert a filter driver into the driver stack of a device. The sample illustrates how to insert such a filte...</div>
+                        </div>
+                        <!--pe17062-->
+                        <!--ps17074-->
+                        <div id="item">
+                                <div><a href="NDIS Connection-less Protocol Driver Sample/description.html">NDIS Connection-less Protocol Driver Sample</a></div>
+                            <div>This sample demonstrates a connection-less NDIS 6.0 protocol.</div>
+                        </div>
+                        <!--pe17074-->
+                        <!--ps25043-->
+                        <div id="item">
+                                <div><a href="Sample Function Driver for OSR USB-FX2 (UMDF Version 2)/description.html">Sample Function Driver for OSR USB-FX2 (UMDF Version 2)</a></div>
+                            <div>The umdf2_fx2 sample is a User-Mode Driver Framework (UMDF) version 2 driver for the OSR USB-FX2 device.</div>
+                        </div>
+                        <!--pe25043-->
+                        <!--ps15740-->
+                        <div id="item">
+                                <div><a href="SkeletonI2C Sample Driver/description.html">SkeletonI2C Sample Driver</a></div>
+                            <div>The SkeletonI2C sample demonstrates how to design a KMDF controller driver for Windows that conforms to the simple peripheral bus (SPB) device driver interface (DDI). SPB is an abstraction for low-speed serial buses (for example, I2C and SPI) that al...</div>
+                        </div>
+                        <!--pe15740-->
+                        <!--ps15760-->
+                        <div id="item">
+                                <div><a href="Print Driver Constraints Sample/description.html">Print Driver Constraints Sample</a></div>
+                            <div>This sample demonstrates how to implement advanced constraint handling, and also PrintTicket/PrintCapabilities handling using JavaScript.</div>
+                        </div>
+                        <!--pe15760-->
+                        <!--ps15765-->
+                        <div id="item">
+                                <div><a href="Native Wifi IHV Service/description.html">Native Wifi IHV Service</a></div>
+                            <div>This sample code demonstrates IHV extensibility for Native WiFi.</div>
+                        </div>
+                        <!--pe15765-->
+                        <!--ps25042-->
+                        <div id="item">
+                                <div><a href="Echo Sample (UMDF Version 2)/description.html">Echo Sample (UMDF Version 2)</a></div>
+                            <div>The ECHO (UMDF version 2) sample demonstrates how to use a sequential queue to serialize read and write requests presented to the driver.</div>
+                        </div>
+                        <!--pe25042-->
+                        <!--ps15669-->
+                        <div id="item">
+                                <div><a href="Bindview Network Configuration Utility/description.html">Bindview Network Configuration Utility</a></div>
+                            <div>The Bindview sample demonstrates how to use INetCfg APIs to enumerate, install, uninstall, bind and unbind network components.</div>
+                        </div>
+                        <!--pe15669-->
+                        <!--ps15774-->
+                        <div id="item">
+                                <div><a href="XPS Rasterization Filter Service Sample/description.html">XPS Rasterization Filter Service Sample</a></div>
+                            <div>This sample implements an XPSDrv filter that rasterizes fixed pages in an XPS document. Hardware vendors can modify this sample to build an XPSDrv filter that produces bitmap images for their printers or other display devices. The sample uses the XPS...</div>
+                        </div>
+                        <!--pe15774-->
+                        <!--ps13083-->
+                        <div id="item">
+                                <div><a href="Early Launch Anti-Malware Driver/description.html">Early Launch Anti-Malware Driver</a></div>
+                            <div>This sample demonstrates how to use the IoRegisterBootDriverCallback and IoUnRegisterBootDriverCallback DDIs from an Early Launch Anti-Malware driver, to receive notifications about the initialization of regular boot start drivers. The building and i...</div>
+                        </div>
+                        <!--pe13083-->
+                        <!--ps15701-->
+                        <div id="item">
+                                <div><a href="Keyboard Layout Samples/description.html">Keyboard Layout Samples</a></div>
+                            <div>The keyboard layout samples demonstrate how to generate layouts for various keyboards and locales.</div>
+                        </div>
+                        <!--pe15701-->
+                        <!--ps15744-->
+                        <div id="item">
+                                <div><a href="Windows Filtering Platform Stream Edit Sample/description.html">Windows Filtering Platform Stream Edit Sample</a></div>
+                            <div>This sample driver demonstrates replacing a string pattern for a Transmission Control Protocol (TCP) connection using the Windows Filtering Platform (WFP).</div>
+                        </div>
+                        <!--pe15744-->
+                        <!--ps15732-->
+                        <div id="item">
+                                <div><a href="XPS Documents Print Sample/description.html">XPS Documents Print Sample</a></div>
+                            <div>This sample is a set of documents that were generated from a variety of sources, including those generated from the Windows Presentation Foundation in the .NET Framework, from Office 2007, and from the Microsoft XPS Document Writer (MXDW). The set of...</div>
+                        </div>
+                        <!--pe15732-->
+                        <!--ps17064-->
+                        <div id="item">
+                                <div><a href="Disk Class Driver/description.html">Disk Class Driver</a></div>
+                            <div>The disk class driver sample is used for managing disk devices</div>
+                        </div>
+                        <!--pe17064-->
+                        <!--ps15771-->
+                        <div id="item">
+                                <div><a href="WPD service sample driver/description.html">WPD service sample driver</a></div>
+                            <div>The WpdServiceSampleDriver shows how to extend the WpdHelloWorldDriver sample so that it supports a simulated device with a Contacts device service. By using this device service, an application can discover events, methods, and properties that operat...</div>
+                        </div>
+                        <!--pe15771-->
+                        <!--ps15761-->
+                        <div id="item">
+                                <div><a href="Print Driver USB Monitor and Bidi Sample/description.html">Print Driver USB Monitor and Bidi Sample</a></div>
+                            <div>This sample demonstrates how to support bidirectional (Bidi) communication over the USB bus, using JavaScript and XML. This sample supports bidirectional status while not printing, and unsolicited status from the printer while printing.</div>
+                        </div>
+                        <!--pe15761-->
+                        <!--ps15664-->
+                        <div id="item">
+                                <div><a href="Async Notification Sample/description.html">Async Notification Sample</a></div>
+                            <div>The Async Notification sample demonstrates how to implement AsyncNotification to communicate between registered applications and printing components that are loaded in the spooler.</div>
+                        </div>
+                        <!--pe15664-->
+                        <!--ps17077-->
+                        <div id="item">
+                                <div><a href="Super Floppy (sfloppy) Storage Class Driver/description.html">Super Floppy (sfloppy) Storage Class Driver</a></div>
+                            <div>The sfloppy sample is a super floppy driver. This driver is a class driver for Super Floppy disk drives.</div>
+                        </div>
+                        <!--pe17077-->
+                        <!--ps17078-->
+                        <div id="item">
+                                <div><a href="SimSensor Simulated Temperature Sensor Sample Driver/description.html">SimSensor Simulated Temperature Sensor Sample Driver</a></div>
+                            <div>This sample is a driver for a simulated temperature sensor device.</div>
+                        </div>
+                        <!--pe17078-->
+                        <!--ps15690-->
+                        <div id="item">
+                                <div><a href="FM Synthesizer Driver Sample/description.html">FM Synthesizer Driver Sample</a></div>
+                            <div>The FMSynth sample driver is a MIDI miniport driver. The sample driver provides applications that use the Microsoft&#174; Windows&#174; multimedia midiOutXxx functions with an interface to a device that implements OPL3-style FM synthesis. Because the sample is...</div>
+                        </div>
+                        <!--pe15690-->
+                        <!--ps15685-->
+                        <div id="item">
+                                <div><a href="Eventdrv/description.html">Eventdrv</a></div>
+                            <div> Eventdrv is a sample kernel-mode trace provider and driver. The driver does not control any hardware; it simply generates trace events. It is designed to demonstrate the use of the Event Tracing for Windows (ETW) API in a driver. Evntdrv registers a...</div>
+                        </div>
+                        <!--pe15685-->
+                        <!--ps15677-->
+                        <div id="item">
+                                <div><a href="Ctx File System Minifilter Driver/description.html">Ctx File System Minifilter Driver</a></div>
+                            <div>The Ctx minifilter is an example that demonstrates how to attach contexts to instances, files, streams, and stream handles in your minifilter.</div>
+                        </div>
+                        <!--pe15677-->
+                        <!--ps13079-->
+                        <div id="item">
+                                <div><a href="CDROM Storage Class Driver/description.html">CDROM Storage Class Driver</a></div>
+                            <div>The CD ROM driver is used to provide access to CD, DVD and Blu-ray drives. It supports Plug and Play, Power Management, and AutoRun (media change notification).</div>
+                        </div>
+                        <!--pe13079-->
+                        <!--ps15683-->
+                        <div id="item">
+                                <div><a href="WSK TCP Echo Server/description.html">WSK TCP Echo Server</a></div>
+                            <div>This sample driver is a minimal driver meant to demonstrate the usage of the Winsock Kernel (WSK) programming interface.</div>
+                        </div>
+                        <!--pe15683-->
+                        <!--ps15699-->
+                        <div id="item">
+                                <div><a href="Kernel Counter Sample (Kcs)/description.html">Kernel Counter Sample (Kcs)</a></div>
+                            <div>The Kcs sample driver demonstrates the use of the kernel-mode performance library. The sample driver does not control any hardware; it simply provides example code that demonstrates how to provide counter data from a kernel-mode driver. The code cont...</div>
+                        </div>
+                        <!--pe15699-->
+                        <!--ps17080-->
+                        <div id="item">
+                                <div><a href="StorAhci StorPort Miniport Driver/description.html">StorAhci StorPort Miniport Driver</a></div>
+                            <div>The StorAhci sample is a Storport ACHI miniport driver.</div>
+                        </div>
+                        <!--pe17080-->
+                        <!--ps15750-->
+                        <div id="item">
+                                <div><a href="Toaster Package Sample/description.html">Toaster Package Sample</a></div>
+                            <div>The Toastpkg sample simulates hardware-first and software-first installation of the toaster sample driver.</div>
+                        </div>
+                        <!--pe15750-->
+                        <!--ps17081-->
+                        <div id="item">
+                                <div><a href="System DMA/description.html">System DMA</a></div>
+                            <div>This sample demonstrates the usage of V3 System DMA. It shows how a driver could use a system DMA controller supported by Windows to write data to a hardware location using DMA.</div>
+                        </div>
+                        <!--pe17081-->
+                        <!--ps15702-->
+                        <div id="item">
+                                <div><a href="Metadata Manager File System Minifilter Driver/description.html">Metadata Manager File System Minifilter Driver</a></div>
+                            <div>The Metadata Manager minifilter sample serves as an example if you want to use files for storing metadata that corresponds to your minifilters. The implementation of this sample depicts scenarios in which modifications to the file might have to be bl...</div>
+                        </div>
+                        <!--pe15702-->
+                        <!--ps15708-->
+                        <div id="item">
+                                <div><a href="MSPLOT Plotter Driver Sample/description.html">MSPLOT Plotter Driver Sample</a></div>
+                            <div>The MSPLOT sample is a printer driver that is designed to support all Hewlett-Packard Graphics Language (HPGL/2) compatible plotters.</div>
+                        </div>
+                        <!--pe15708-->
+                        <!--ps15710-->
+                        <div id="item">
+                                <div><a href="NDIS MUX Intermediate Driverand Notify Object/description.html">NDIS MUX Intermediate Driverand Notify Object</a></div>
+                            <div>The MUX Intermediate Miniport (IM) driver is an NDIS 6.0 driver that demonstrates the operation of an “N:1” MUX driver.</div>
+                        </div>
+                        <!--pe15710-->
+                        <!--ps23547-->
+                        <div id="item">
+                                <div><a href="WSDMon Bidi Extension Sample/description.html">WSDMon Bidi Extension Sample</a></div>
+                            <div>This sample demonstrates how to use an XML extension file to support bidirectional (Bidi) communication with a WSD connected printer.</div>
+                        </div>
+                        <!--pe23547-->
+                        <!--ps15688-->
+                        <div id="item">
+                                <div><a href="FileHistory Sample/description.html">FileHistory Sample</a></div>
+                            <div>The FileHistory sample is a console application that starts the file history service, if it is stopped, and schedules regular backups. The application requires, as a command-line parameter, the path name of a storage device to use as the default back...</div>
+                        </div>
+                        <!--pe15688-->
+                        <!--ps15694-->
+                        <div id="item">
+                                <div><a href="Radio Switch Test Driver for OSR USB-FX2 Development Board/description.html">Radio Switch Test Driver for OSR USB-FX2 Development Board</a></div>
+                            <div>This sample demonstrates how to structure a HID driver for radio switches for the OSR USB-FX2 Development Board.</div>
+                        </div>
+                        <!--pe15694-->
+                        <!--ps15751-->
+                        <div id="item">
+                                <div><a href="Tracedrv/description.html">Tracedrv</a></div>
+                            <div>Tracedrv is a sample driver instrumented for software tracing. The driver does not control any hardware; it simply generates trace messages. It is designed to show how to use WPP software tracing macros in a driver.</div>
+                        </div>
+                        <!--pe15751-->
+                        <!--ps17063-->
+                        <div id="item">
+                                <div><a href="ClassPnP Storage Class Driver Library/description.html">ClassPnP Storage Class Driver Library</a></div>
+                            <div>This library is the library for all storage drivers. It simplifies writing a storage class driver by implementing 90 percent of the code that you need to support Plug and Play (PnP), power management, and so on. This library is used by disk, CDROM, a...</div>
+                        </div>
+                        <!--pe17063-->
+                        <!--ps13095-->
+                        <div id="item">
+                                <div><a href="Storage SDIO Driver/description.html">Storage SDIO Driver</a></div>
+                            <div> This is a sample for a functional Secure Digital (SD) IO driver. The driver is written using the Kernel Mode Driver Framework. It is a driver for a generic mars development board that implements the SDIO protocol without additional functionality.</div>
+                        </div>
+                        <!--pe13095-->
+                        <!--ps17084-->
+                        <div id="item">
+                                <div><a href="Sample UMDF Filter above UMDF Function Driver for OSR USB-FX2 (UMDF Version 1)/description.html">Sample UMDF Filter above UMDF Function Driver for OSR USB-FX2 (UMDF Version 1)</a></div>
+                            <div>The umdf_filter_umdf sample demonstrates how to load a User-Mode Driver Framework (UMDF) filter driver as an upper filter driver above the umdf_fx2 sample driver.</div>
+                        </div>
+                        <!--pe17084-->
+                        <!--ps15679-->
+                        <div id="item">
+                                <div><a href="Delete File System Minifilter Driver/description.html">Delete File System Minifilter Driver</a></div>
+                            <div>The Delete minifilter is an example that demonstrates how to detect deletions of files or streams. Deletions are reported as debug output.</div>
+                        </div>
+                        <!--pe15679-->
+                        <!--ps15676-->
+                        <div id="item">
+                                <div><a href="Common Property Sheet UI Sample/description.html">Common Property Sheet UI Sample</a></div>
+                            <div>The CPSUISAM application causes the Common Property Sheet User Interface (CPSUI) to call the Windows print spooler to create property sheet pages for the system&#39;s default printer.</div>
+                        </div>
+                        <!--pe15676-->
+                        <!--ps15769-->
+                        <div id="item">
+                                <div><a href="WPD Basic Hardware Sample Driver (UMDF Version 1)/description.html">WPD Basic Hardware Sample Driver (UMDF Version 1)</a></div>
+                            <div>The WpdBasicHardwareDriver is a WPD driver that supports nine devices. These devices were selected because of their simplicity. This simplicity allowed the sample to focus on the tasks that are common to portable devices without getting bogged down i...</div>
+                        </div>
+                        <!--pe15769-->
+                        <!--ps17072-->
+                        <div id="item">
+                                <div><a href="Multipath IO (MPIO) DSM Sample/description.html">Multipath IO (MPIO) DSM Sample</a></div>
+                            <div>The MPIO DSM Sample is intended to serve as an example to follow when building your own vendor specific device specific modules (DSM). This sample DSM supports iSCSI and Fibre Channel devices.</div>
+                        </div>
+                        <!--pe17072-->
+                        <!--ps15661-->
+                        <div id="item">
+                                <div><a href="Audio Adapters Samples/description.html">Audio Adapters Samples</a></div>
+                            <div>The Audio Adapters sample contains the Stdunk and MPU-401 driver samples. The Stdunk sample shows how to develop a generalized implementation of an audio driver interface. The MPU-401 sample is an adapter sample for the MPU-401 device. Stdunk Sample ...</div>
+                        </div>
+                        <!--pe15661-->
+                        <!--ps15716-->
+                        <div id="item">
+                                <div><a href="NullFilter File System Minifilter Driver/description.html">NullFilter File System Minifilter Driver</a></div>
+                            <div>The NullFilter minifilter is a sample minifilter that shows how to register a minifilter with the filter manager.</div>
+                        </div>
+                        <!--pe15716-->
+                        <!--ps23532-->
+                        <div id="item">
+                                <div><a href="Echo Sample (UMDF Version 1)/description.html">Echo Sample (UMDF Version 1)</a></div>
+                            <div>This sample demonstrates how to use User-Mode Driver Framework (UMDF) version 1 to write a driver and demonstrates best practices.</div>
+                        </div>
+                        <!--pe23532-->
+                        <!--ps15672-->
+                        <div id="item">
+                                <div><a href="CancelSafe File System Minifilter Driver/description.html">CancelSafe File System Minifilter Driver</a></div>
+                            <div>The CancelSafe filter is a sample minifilter that you use if you want to use cancel-safe queues.</div>
+                        </div>
+                        <!--pe15672-->
+                        <!--ps16153-->
+                        <div id="item">
+                                <div><a href="SDV-FailDriver-KMDF/description.html">SDV-FailDriver-KMDF</a></div>
+                            <div>The SDV-FailDriver-KMDF sample driver contains intentional code errors that are designed to show the capabilities and features of Static Driver Verifier (SDV). SDV is a static verification tool that systematically analyzes the source code of Windows ...</div>
+                        </div>
+                        <!--pe16153-->
+                        <!--ps15680-->
+                        <div id="item">
+                                <div><a href="Driver Install Frameworks API (DIFxAPI) Sample/description.html">Driver Install Frameworks API (DIFxAPI) Sample</a></div>
+                            <div>Driver Install Frameworks API (DIFxAPI) Sample.</div>
+                        </div>
+                        <!--pe15680-->
+                        <!--ps15695-->
+                        <div id="item">
+                                <div><a href="HBtnKey Input Driver/description.html">HBtnKey Input Driver</a></div>
+                            <div>The Tablet PC button sample driver (HBtnKey) demonstrates how to support i8042 port-compatible button devices that are installed in a Tablet PC.</div>
+                        </div>
+                        <!--pe15695-->
+                        <!--ps15666-->
+                        <div id="item">
+                                <div><a href="Print Auto Configuration Sample/description.html">Print Auto Configuration Sample</a></div>
+                            <div>The auto configuration sample demonstrates how to implement Unidrv-based and PScript5-based drivers to leverage the inbox support for auto-configuration. The sample works only when used with the standard TCP/IP port monitor or the Network-Connected D...</div>
+                        </div>
+                        <!--pe15666-->
+                        <!--ps17068-->
+                        <div id="item">
+                                <div><a href="Sample KMDF Bus Driver for OSR USB-FX2/description.html">Sample KMDF Bus Driver for OSR USB-FX2</a></div>
+                            <div>The kmdf_enumswitches sample demonstrates how to use Kernel-Mode Driver Framework (KMDF) as a bus driver using the OSR USB-FX2 device.</div>
+                        </div>
+                        <!--pe17068-->
+                        <!--ps15697-->
+                        <div id="item">
+                                <div><a href="WDF Installation Package/description.html">WDF Installation Package</a></div>
+                            <div>This sample contains example code that demonstrates how to install WDF packages on a system. This code can be used as-is to install the needed WDF components onto a user system. This code can also be reworked into an existing setup application to pro...</div>
+                        </div>
+                        <!--pe15697-->
+                        <!--ps17083-->
+                        <div id="item">
+                                <div><a href="Sample UMDF Filter above KMDF Function Driver for OSR USB-FX2 (UMDF Version 1)/description.html">Sample UMDF Filter above KMDF Function Driver for OSR USB-FX2 (UMDF Version 1)</a></div>
+                            <div>The umdf_filter_kmdf sample demonstrates how to load a UMDF filter driver as an upper filter driver above the kmdf_fx2 sample driver.</div>
+                        </div>
+                        <!--pe17083-->
+                        <!--ps15726-->
+                        <div id="item">
+                                <div><a href="Print Driver INF Sample/description.html">Print Driver INF Sample</a></div>
+                            <div>This sample shows how to build an information file (INF) for a v3 print driver. The guidance provided in this sample can be used to build INFs for all the other print samples that require INFs. We recommend that all v3 drivers implement INFs based on...</div>
+                        </div>
+                        <!--pe15726-->
+                        <!--ps15731-->
+                        <div id="item">
+                                <div><a href="OpenXPS Documents Print Sample/description.html">OpenXPS Documents Print Sample</a></div>
+                            <div>This sample contains a set of documents that were generated from a variety of sources, including those generated from the Windows Presentation Foundation in the .NET Framework, from Office 2007, and from the Microsoft XPS Document Writer (MXDW). A fe...</div>
+                        </div>
+                        <!--pe15731-->
+                        <!--ps16155-->
+                        <div id="item">
+                                <div><a href="SDV-FailDriver-STORPORT/description.html">SDV-FailDriver-STORPORT</a></div>
+                            <div>The SDV-FailDriver-Storport sample driver contains intentional code errors that are designed to show the capabilities and features of Static Driver Verifier (SDV). SDV is a static verification tool that systematically analyzes the source code of Wind...</div>
+                        </div>
+                        <!--pe16155-->
+                        <!--ps16156-->
+                        <div id="item">
+                                <div><a href="SDV-FailDriver-WDM/description.html">SDV-FailDriver-WDM</a></div>
+                            <div>The SDV-FailDriver-WDM sample driver contains intentional code errors that are designed to show the capabilities and features of Static Driver Verifier (SDV). SDV is a static verification tool that systematically analyzes the source code of Windows k...</div>
+                        </div>
+                        <!--pe16156-->
+                        <!--ps15722-->
+                        <div id="item">
+                                <div><a href="PixLib sample/description.html">PixLib sample</a></div>
+                            <div>The PixLib sample demonstrates how to implement the CPixel class for use by a display driver. For more information, see the WDK documentation topic, CPixel Support Methods for Lightweight MIP Maps.</div>
+                        </div>
+                        <!--pe15722-->
+                        <!--ps15755-->
+                        <div id="item">
+                                <div><a href="UMDF SocketEcho Sample (UMDF Version 1)/description.html">UMDF SocketEcho Sample (UMDF Version 1)</a></div>
+                            <div>The UMDF SocketEcho sample demonstrates how to use the User-Mode Driver Framework (UMDF) to write a driver and demonstrates best practices.</div>
+                        </div>
+                        <!--pe15755-->
+                        <!--ps13078-->
+                        <div id="item">
+                                <div><a href="Cancel-Safe IRP Queue Sample/description.html">Cancel-Safe IRP Queue Sample</a></div>
+                            <div>This sample demonstrates the use of the cancel-safe queue routines IoCsqInitialize, IoCsqInsertIrp, IoCsqRemoveIrp, IoCsqRemoveNextIrp. These routines were introduced in Windows XP for queuing IRPs in the driver&#39;s internal device queue. By using thes...</div>
+                        </div>
+                        <!--pe13078-->
+                        <!--ps15770-->
+                        <div id="item">
+                                <div><a href="WPD multi-transport sample driver/description.html">WPD multi-transport sample driver</a></div>
+                            <div>The WpdMultiTransportDriver sample demonstrates how you could extend the WpdHelloWorldDriver for a device that supports multiple transports. A transport is a protocol over which a portable device communicates with a computer. Example transports inclu...</div>
+                        </div>
+                        <!--pe15770-->
+                        <!--ps25041-->
+                        <div id="item">
+                                <div><a href="Toaster Sample (UMDF Version 2)/description.html">Toaster Sample (UMDF Version 2)</a></div>
+                            <div>The Toaster (UMDF version 2) sample is an iterative series of samples that demonstrate fundamental aspects of Windows driver development.</div>
+                        </div>
+                        <!--pe25041-->
+                        <!--ps15767-->
+                        <div id="item">
+                                <div><a href="Sample KMDF Driver Implementing a WMI Data Provider/description.html">Sample KMDF Driver Implementing a WMI Data Provider</a></div>
+                            <div>WmiSamp WMI Provider is a sample KMDF driver that implements a WMI data provider.</div>
+                        </div>
+                        <!--pe15767-->
+                        <!--ps15728-->
+                        <div id="item">
+                                <div><a href="Print Queue Active Server Page Sample/description.html">Print Queue Active Server Page Sample</a></div>
+                            <div>This sample creates a custom device status active server page (ASP) for a Web printer. In this case, a modified document queue view is implemented, with e-mail and phone links to a fictitious help desk.</div>
+                        </div>
+                        <!--pe15728-->
+                        <!--ps15674-->
+                        <div id="item">
+                                <div><a href="CDO File System Minifilter Driver/description.html">CDO File System Minifilter Driver</a></div>
+                            <div>The CDO minifilter sample is an example if you intend to use a control device object (CDO) with your minifilters.</div>
+                        </div>
+                        <!--pe15674-->
+                        <!--ps17070-->
+                        <div id="item">
+                                <div><a href="LSI_U3 StorPort Miniport Driver/description.html">LSI_U3 StorPort Miniport Driver</a></div>
+                            <div>The LSI_U3 sample is an adapter driver for use with Parallel SCSI Host Bus Adapters or on-motherboard solutions that use the LSI 53C1010 SCSI ASIC.</div>
+                        </div>
+                        <!--pe17070-->
+                        <!--ps16154-->
+                        <div id="item">
+                                <div><a href="SDV-FailDriver-NDIS/description.html">SDV-FailDriver-NDIS</a></div>
+                            <div> The SDV-FailDriver-NDIS sample driver contains intentional code errors that are designed to show the capabilities and features of Static Driver Verifier (SDV). SDV is a static verification tool that systematically analyzes the source code of Windows...</div>
+                        </div>
+                        <!--pe16154-->
+                        <!--ps23529-->
+                        <div id="item">
+                                <div><a href="SystemTraceProvider/description.html">SystemTraceProvider</a></div>
+                            <div>This sample application demonstrates how to use event tracing control APIs to collect events from the system trace provider.</div>
+                        </div>
+                        <!--pe23529-->
+                        <!--ps23534-->
+                        <div id="item">
+                                <div><a href="DirectMusic Software Synthesizer Sample/description.html">DirectMusic Software Synthesizer Sample</a></div>
+                            <div>This sample contains working source code for a kernel-mode software synthesizer that plugs into the Microsoft&#174; DirectMusic&#174; and WDM Audio architectures. You can use this sample code to start building your own software synthesizer, and then modify the...</div>
+                        </div>
+                        <!--pe23534-->
+                        <!--ps17067-->
+                        <div id="item">
+                                <div><a href="iSCSI WMI Client/description.html">iSCSI WMI Client</a></div>
+                            <div>WMI Implementation in an iSCSI miniport can be tested using the iSCSICLI.exe tool, the iSCSI Initiator Properties page, the WBEMTEST.exe tool, and customized WMI scripts</div>
+                        </div>
+                        <!--pe17067-->
+                        <!--ps15763-->
+                        <div id="item">
+                                <div><a href="KMDF Power Framework (PoFx) Sample/description.html">KMDF Power Framework (PoFx) Sample</a></div>
+                            <div>This solution consists of two samples that demonstrate how a KMDF driver can implement F-state-based power management. The SingleComp sample demonstrates how a KMDF driver can implement F-state-based power management for a device that has only a sing...</div>
+                        </div>
+                        <!--pe15763-->
+                        <!--ps13087-->
+                        <div id="item">
+                                <div><a href="Msgsm610 Sample Codec/description.html">Msgsm610 Sample Codec</a></div>
+                            <div>The Msgsm610 sample implements a software codec that performs speech compression on a digital audio stream that contains voice content.</div>
+                        </div>
+                        <!--pe13087-->
+                        <!--ps13086-->
+                        <div id="item">
+                                <div><a href="GenPrint Print Processor Sample/description.html">GenPrint Print Processor Sample</a></div>
+                            <div>The GenPrint Print Processor sample demonstrates how to implement a print processor.</div>
+                        </div>
+                        <!--pe13086-->
+                        <!--ps15706-->
+                        <div id="item">
+                                <div><a href="Msfilter Sample Codec/description.html">Msfilter Sample Codec</a></div>
+                            <div>The Msfilter codec sample provides routines for volume and echo effects that you can apply to any audio content.</div>
+                        </div>
+                        <!--pe15706-->
+                        <!--ps25040-->
+                        <div id="item">
+                                <div><a href="Power Framework (PoFx) Sample (UMDF Version 2)/description.html">Power Framework (PoFx) Sample (UMDF Version 2)</a></div>
+                            <div>This solution demonstrates how a User-Mode Driver Framework (UMDF) version 2 driver can implement F-state-based power management. The SingleComp project demonstrates how a UMDF version 2 driver can implement F-state-based power management for a devic...</div>
+                        </div>
+                        <!--pe25040-->
+                        <!--ps15725-->
+                        <div id="item">
+                                <div><a href="Print Provider Sample Template/description.html">Print Provider Sample Template</a></div>
+                            <div>This sample is a template that contains skeletal implementations of the functions that print providers should define. This sample is not a functional print provider.</div>
+                        </div>
+                        <!--pe15725-->
+                        <!--ps15738-->
+                        <div id="item">
+                                <div><a href="Print Pipeline Simple Filter/description.html">Print Pipeline Simple Filter</a></div>
+                            <div>The printing system supports a print filter pipeline. The pipeline is run when a print job is consumed by the print spooler and sent to the device.</div>
+                        </div>
+                        <!--pe15738-->
+                        <!--ps15684-->
+                        <div id="item">
+                                <div><a href="Hardware Event Sample/description.html">Hardware Event Sample</a></div>
+                            <div>This sample demonstrates two different ways a Windows kernel-mode driver can notify an application about a hardware event. One way uses an event-based method, and the other uses an IRP-based method. Because the sample driver is not talking to any rea...</div>
+                        </div>
+                        <!--pe15684-->
+                        <!--ps17082-->
+                        <div id="item">
+                                <div><a href="SimThermalClient Simulated Thermal Client Sample Driver/description.html">SimThermalClient Simulated Thermal Client Sample Driver</a></div>
+                            <div>This sample is a driver for a simulated device that is a client of Windows thermal management. This driver publishes a GUID_THERMAL_COOLING_INTERFACE driver interface. Support for this interface is available starting with Windows&#160;8.1. Drivers publish...</div>
+                        </div>
+                        <!--pe17082-->
+                </div>
+            </div>
+    </div>
+</body>
+</html>

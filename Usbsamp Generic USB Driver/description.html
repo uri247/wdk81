@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=15EDE1F25211E852032D2691D5FEB7B8" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/c9b486a1-0011-4088-b424-6fe1108f4cf6Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=52ADCBE5376E50AE6798D3D038D063E9" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Usbsamp Generic USB Driver</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/ad2ea103-5cd9-4fe1-8102-a381d94d6535Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Usbsamp Generic USB Driver</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            KMDF, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            usb
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">10/17/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/Usbsamp-Sample-6bbfe145">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>The USBSAMP sample demonstrates how to perform full speed, high speed, and SuperSpeed transfers to and from bulk and isochronous endpoints of a generic USB device. USBSAMP is based on the
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff557405">Kernel Mode Driver Framework</a> (KMDF). Superspeed bulk and isochronous transfers only work when the Microsoft USB 3.0 stack is loaded. The sample also contains a console test application
+ that initiates bulk (including stream) and isochronous transfers and obtains data from the device's I/O endpoints. The application also demonstrates how to use GUID-based device names and pipe names generated by the operating system using the
+<b>SetupDiXXX</b> user-mode APIs. </p>
+<p>For information about USB, see <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff538930">
+Universal Serial Bus (USB) Drivers</a>.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;To build this sample, you need Microsoft Visual Studio&nbsp;2013 and Windows Driver Kit (WDK)&nbsp;8.1. You can get evaluation copies at
+<a href="http://go.microsoft.com/fwlink/?LinkID=309150">Visual Studio&nbsp;2013</a> and
+<a href="http://go.microsoft.com/fwlink/?LinkID=309150">WDK&nbsp;8.1</a>. For Windows Driver Kit (WDK)&nbsp;8 samples, download the
+<a href="http://code.msdn.microsoft.com/windowshardware/Usbsamp-Sample-6bbfe145/ http://go.microsoft.com/fwlink/?LinkId=317090">WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only on Microsoft Visual Studio Professional&nbsp;2012 or Microsoft Visual Studio Ultimate&nbsp;2012 with the WDK&nbsp;8.</p>
+<h3>Operating system requirements</h3>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;8.1 </dt><dt>Windows&nbsp;8 </dt><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2012&nbsp;R2 </dt><dt>Windows Server&nbsp;2012 </dt><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h3>Build the sample</h3>
+<h3><a id="Building_a_Driver_Using_Visual_Studio"></a><a id="building_a_driver_using_visual_studio"></a><a id="BUILDING_A_DRIVER_USING_VISUAL_STUDIO"></a>Building a Driver Using Visual Studio</h3>
+<p>You build a driver the same way you build any project or solution in Visual Studio. When you create a new driver project using a Windows driver template, the template defines a default (active) project configuration and a default (active) solution build
+ configuration. When you create a project from existing driver sources or convert existing driver code that was built with previous versions of the WDK, the conversion process preserves the target version information (operating systems and platform).</p>
+<p>The default Solution build configuration is Windows&nbsp;8.1 Debug and Win32. You can change the default configuration to build for Windows&nbsp;7 or Windows&nbsp;Vista version of the operating system.</p>
+<p class="proch"><b>To select a configuration and build a driver</b></p>
+<ol>
+<li>Open the driver project or solution in Visual Studio&nbsp;2013 (find <i>filtername</i>.sln or
+<i>filtername</i>.vcxproj). </li><li>Right-click the solution in the <b>Solutions Explorer</b> and select <b>Configuration Manager</b>.
+</li><li>From the <b>Configuration Manager</b>, select the <b>Active Solution Configuration</b> (for example, Windows&nbsp;8.1 Debug or Windows&nbsp;8.1 Release) and the
+<b>Active Solution Platform</b> (for example, Win32) that correspond to the type of build you are interested in.
+</li><li>From the Build menu, click <b>Build Solution</b> (Ctrl&#43;Shift&#43;B). </li></ol>
+<h3><a id="Building_a_Driver_Using_the_Command_Line__MSBuild_"></a><a id="building_a_driver_using_the_command_line__msbuild_"></a><a id="BUILDING_A_DRIVER_USING_THE_COMMAND_LINE__MSBUILD_"></a>Building a Driver Using the Command Line (MSBuild)</h3>
+<p>You can build a driver from the command line using the Visual Studio Command Prompt window and the Microsoft Build Engine (MSBuild.exe) Previous versions of the WDK used the Windows Build utility (Build.exe) and provided separate build environment windows
+ for each of the supported build configurations. You can now use the Visual Studio Command Prompt window for all build configurations.</p>
+<p class="proch"><b>To select a configuration and build a driver</b></p>
+<ol>
+<li>Open a Visual Studio Command Prompt window at the <b>Start</b> screen. From this window you can use MsBuild.exe to build any Visual Studio project by specifying the project (.VcxProj) or solutions (.Sln) file.
+</li><li>Navigate to the project directory and enter the <b>MSbuild</b> command for your target. For example, to perform a clean build of a Visual Studio driver project called
+<i>filtername</i>.vcxproj, navigate to the project directory and enter the following MSBuild command:
+<b>msbuild /t:clean /t:build .\</b><i>filtername</i><b>.vcxproj</b>. </li></ol>
+<h3>Run the sample</h3>
+<p>Make sure your device has been programmed with the device VID/PID in the USBSAMP.inf file. If not, edit the device VID, PID, and description text in the INF to match your test board/device.</p>
+<p class="proch"><b>To install the driver</b></p>
+<ol>
+<li>Attach your device to the target computer. </li><li>Start <b>Device Manager</b>, find the device in the tree. </li><li>Right-click on the device and select <b>Update Driver Software...</b>. </li><li>Choose <b>Browse my computer for driver software</b> and select <b>Let me pick from a list of device drivers on my computer</b>.
+</li><li>In the <b>Select your device's type from the list below</b> list, select <b>Show All Devices</b>, and click
+<b>Next</b>. </li><li>Click <b>Have Disk...</b>, specify the target media or the installation folder that contains the required INF and SYS files, and click
+<b>Ok</b>. </li><li>Click <b>Next</b>.
+<p>The system will scan the folder and pick up the matching INF and start the installation.
+</p>
+<p>You will get a <b>Windows Security</b> dialog indicating that the driver is not signed. Select
+<b>Continue Anyway</b>. </p>
+<p>The system will copy the KMDF coinstaller (wdfcoinstallerMMmmm.dll), usbsamp.sys, and usbsamp.inf, and start the device.
+</p>
+</li></ol>
+<p>If installation completes successfully, you'll see <b>Windows has successfully updated your driver software</b> in the Wizard. Click
+<b>Finish</b>. View the device in <b>Device Manager</b> under <b>Samples</b>.</p>
+<p>The sample includes a test application, usbsamp.exe. This console application enumerates the interface registered by the driver and opens the device to send Read, Write, or DeviceIoControl requests based on the command line options.
+</p>
+<ul>
+<li>
+<p>To view all descriptors and endpoint information, use the following command.</p>
+<p><b>usbsamp.exe -u </b></p>
+<p>You can use the preceding command to view pipe numbers for read and write requests.</p>
+</li><li>
+<p>To send a Read-Write request, use the following command.</p>
+<p><b>usbsamp.exe -r 1024 -w 1024 -c 100 -v</b></p>
+<p>The preceding command first writes 1024 bytes of data to bulk out endpoint (pipe 1), then reads 1024 bytes from bulk in endpoint (pipe 0), and compares the read buffer with write buffer to see if they match. If the buffer contents match, it performs this
+ operation 100 times.</p>
+</li><li>
+<p>To send Read-Write requests to bulk endpoints, use any of the following commands, simultaneously. If Read-Write requests are sent to a SuperSpeed bulk endpoint with streams, the sample driver always uses the first underlying stream associated with that endpoint.
+ The driver is multi-thread safe so it can handle multiple requests at a time. </p>
+<p><b>usbsamp.exe -r 65536</b></p>
+<p>The preceding command reads 65536 bytes from pipe 0.</p>
+<p><b>usbsamp.exe -w 65536</b></p>
+<p>The preceding command writes 65536 bytes to pipe 1.</p>
+<p><b>usbsamp.exe -r 65536 -i pipe02</b></p>
+<p>The preceding command reads 65536 bytes from pipe 2.</p>
+<p><b>usbsamp.exe -w 65536 -o pipe03</b></p>
+<p>The preceding command writes 65536 bytes to pipe 3.</p>
+</li><li>
+<p>To send Read and Write requests to isochronous endpoints you can use one or more of these commands simultaneously.
+</p>
+<p><b>usbsamp.exe -r 512 -i pipe04</b></p>
+<p>The preceding command reads 512 bytes from pipe 4.</p>
+<p><b>usbsamp.exe -w 512 -o pipe05</b></p>
+<p>The preceding command writes 512 bytes to pipe 5.</p>
+<p><b>usbsamp.exe -w 1024 -o pipe05 -r 1024 -i pipe04 -c 100 -v</b></p>
+<p>The preceding command writes 1024 bytes to pipe 5, then reads 1024 bytes from pipe 4, and compares the buffers to see if they match. If the buffer contents match, it performs this operation 100 times.</p>
+</li><li>To skip validation of the data to be read or written in a particular request, use the command with
+<b>-x</b> option as follows:
+<p><b>usbsamp.exe -r 1024 -w 1024 -c 100 -x</b></p>
+</li></ul>
+<p></p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

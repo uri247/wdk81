@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="description/Combined.css,0:sprite;/Areas/Epx/Themes/Windows/Content:0&amp;amp;hashKey=15EDE1F25211E852032D2691D5FEB7B8" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="description/c9b486a1-0011-4088-b424-6fe1108f4cf6Combined.css,0:sprite,1:LinkList;/Areas/Epx/Themes/Windows/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;hashKey=52ADCBE5376E50AE6798D3D038D063E9" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>NDIS 6.0 Filter Driver</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" /><link href="description/ad2ea103-5cd9-4fe1-8102-a381d94d6535Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>NDIS 6.0 Filter Driver</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ndis, Windows Driver
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            Networking, ndis
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">10/17/2013</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MS-LPL</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/windowshardware/NDISLWFSYS-Sample-NDIS-60-42b76875">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<div id="mainSection">
+<p>The Ndislwf sample is currently a do-nothing pass-through NDIS 6 filter driver that demonstrates the basic principles underlying an NDIS 6.0 Filter driver. The sample is a replacement of NDIS 5 Sample Intermediate Driver (Passthru driver).
+</p>
+<p>Although the filter driver is a Modifying filter driver, the filter driver currently doesn’t modify any packets and it only re-packages and sends down all OID requests. You may easily update this filter driver to change packets before passing them along.
+ Or you may use the filter to originate new packets to send or receive. For example, the filter could encrypt/compress outgoing and decrypt/decompress incoming data.</p>
+<p class="note"><b>Note</b>&nbsp;&nbsp;To build this sample, you need Microsoft Visual Studio&nbsp;2013 and Windows Driver Kit (WDK)&nbsp;8.1. You can get evaluation copies at
+<a href="http://go.microsoft.com/fwlink/?LinkID=309150">Visual Studio&nbsp;2013</a> and
+<a href="http://go.microsoft.com/fwlink/?LinkID=309150">WDK&nbsp;8.1</a>. For Windows Driver Kit (WDK)&nbsp;8 samples, download the
+<a href="http://code.msdn.microsoft.com/windowshardware/NDISLWFSYS-Sample-NDIS-60-42b76875/ http://go.microsoft.com/fwlink/?LinkId=317090">WDK&nbsp;8 samples pack</a>. The samples in the WDK&nbsp;8 samples pack will build only on Microsoft Visual Studio Professional&nbsp;2012 or Microsoft Visual Studio Ultimate&nbsp;2012 with the WDK&nbsp;8.</p>
+<h3>Operating system requirements</h3>
+<table>
+<tbody>
+<tr>
+<th>Client</th>
+<td><dt>Windows&nbsp;7 </dt></td>
+</tr>
+<tr>
+<th>Server</th>
+<td><dt>Windows Server&nbsp;2008&nbsp;R2 </dt></td>
+</tr>
+</tbody>
+</table>
+<h3>Build the sample</h3>
+<p>For information on how to build a driver solution using Microsoft Visual Studio, see
+<a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff554644">Building a Driver</a>.</p>
+<h3>Run the sample</h3>
+<h3><a id="INSTALLING_THE_SAMPLE"></a><a id="installing_the_sample"></a>INSTALLING THE SAMPLE</h3>
+<p>Ndislwf is installed as a service (called <b>NDIS Sample LightWeight Filter</b> in the supplied INF). To install, follow the steps below:</p>
+<ol>
+<li>Prepare a an installation directory that contains these files: netlwf.inf and ndislwf.sys.
+</li><li>On the desktop, click <b>Start</b>, then open <b>Control Panel</b>, then open
+<b>Network and Internet Connections</b>, then open <b>Network Connections</b>, then right-click on the relevant Local Area Connection icon and choose
+<b>Properties</b>. </li><li>Click Install, then Service, then Add, then Have Disk. </li><li>Browse to the drive/directory containing the files listed above. ClickOK. This should show “NDIS Sample LightWeight Filter” in a list of Network Services. Highlight this and click OK. This should install the Ndislwf filter driver.
+</li><li>Click OK or Yes each time if the system prompts with a warning regarding installation of unsigned files. This is necessary because binaries generated via the LDK build environment are not signed.
+</li></ol>
+<h3><a id="Basic_steps_in_attaching_and_detaching_of_Ndislwf_driver_"></a><a id="basic_steps_in_attaching_and_detaching_of_ndislwf_driver_"></a><a id="BASIC_STEPS_IN_ATTACHING_AND_DETACHING_OF_NDISLWF_DRIVER_"></a>Basic steps in attaching and detaching
+ of Ndislwf driver:</h3>
+<ol>
+<li>During <code>DriverEntry</code>, the ndislwf driver registers as a NDIS 6 filter driver.
+</li><li>Later on, NDIS calls Ndislwf <code>FilterAttach</code> handler, for each underlying NDIS adapter on which it is configured to attach.
+</li><li>In the context of FilterAttach Handler, filter driver call <code>NdisFAttribute</code> to register its filter module context with NDIS. After that, filter driver can read its own setting in registry by calling
+<code>NdisOpenConfigurationEx</code>, and calls <code>NdisXXX</code> functions. </li><li>After FilterAttach successfully returns, NDIS restarts the filter later by calling
+<code>FilterRestart</code> handler. FilterRestart should prepare to handle send/receive data. After restart return successfully, filter driver should be able to process send/receive.
+</li><li>All requests and sends coming from overlying drivers for the Ndislwf filter driver are repackaged if necessary and sent down to NDIS, to be passed to the underlying NDIS driver.
+</li><li>All indications arriving from an underlying NDIS driver are forwarded up by Ndislwf filter driver.
+</li><li>NDIS calls <code>FilterPause</code> handler when NDIS needs to detach the filter from the stack or there is some configuration changes in the stack. In processing the pause request from NDIS, the Ndislwf driver waits for all its own outstanding requests
+ to be completed before it completes the pause request. </li><li>NDIS calls the Ndislwf driver’s <code>FilterDetach</code> entry point when NDIS needs to detach a filter module from NDIS stack. FilterDetach handler should free all the memory allocation done in FilterAttach, and undo the operations it did in FilterAttach
+ Handler. </li></ol>
+<h3><a id="File_Manifest"></a><a id="file_manifest"></a><a id="FILE_MANIFEST"></a>File Manifest</h3>
+<table>
+<tbody>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>makefile</td>
+<td>Used during compilation to create the object and sys files</td>
+</tr>
+<tr>
+<td>filter.c</td>
+<td>Filter driver entry points and related functions in the Ndislwf filter driver</td>
+</tr>
+<tr>
+<td>netlwf.inf</td>
+<td>Installation INF for the service</td>
+</tr>
+<tr>
+<td>device.c</td>
+<td>Virtual device related routines such as registering a device and handling IOCTLs</td>
+</tr>
+<tr>
+<td>filter.h</td>
+<td>Prototypes of all functions and data structures used by the Ndislwf driver</td>
+</tr>
+<tr>
+<td>filter.htm</td>
+<td>Documentation for the filter driver (this file)</td>
+</tr>
+<tr>
+<td>filter.rc</td>
+<td>Resource file for the Ndislwf driver</td>
+</tr>
+<tr>
+<td>precomp.h</td>
+<td>Precompile header file</td>
+</tr>
+<tr>
+<td>flt_dbg.c</td>
+<td>Debug-related code</td>
+</tr>
+<tr>
+<td>flt_dbg.h</td>
+<td>Debug code definitions and structures</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>List of source files that are compiled and linked to create the ndislwf driver.</td>
+</tr>
+</tbody>
+</table>
+<p>For more information, see <a href="http://msdn.microsoft.com/en-us/library/windows/hardware/ff565492">
+NDIS Filter Drivers</a> in the network devices design guide.</p>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>
